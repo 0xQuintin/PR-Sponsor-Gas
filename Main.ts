@@ -5,9 +5,9 @@ import { TransferERC20 } from "./TransferERC20";
 import { Base } from "./Base";
 
 //wallet
-const signerKey = "8e2435e630ad7ca21647025465cd919c242bd64513adb19eb7fadb9c002d72cf";
-const sponsorKey = "d0d1d0b5964610690c203c5ec87d30b56e433e7ed7a0353d6fef4a53be0bc666";
-const relayKey = "d0d1d0b5964610690c203c5ec87d30b56e433e7ed7a0353d6fef4a53be0bc666";
+const signerKey = "";
+const sponsorKey = "";
+const relayKey = "";
 const relayWallet = new Wallet(relayKey);
 const signerWallet = new Wallet(signerKey);
 const sponsorWallet = new Wallet(sponsorKey);
@@ -20,8 +20,8 @@ const provider = new ethers.providers.AlchemyProvider("goerli", APIKey);
 const main = async () => {
 
   const flashBotsProvider = await FlashbotsBundleProvider.create(provider, relayWallet,"https://relay-goerli.epheph.com/");
-  let recepient = "0x4289eA7F182927557E3d06eBa5b49b6849a77CF2";
-  let tokenAddress = "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6";
+  let recepient = "";
+  let tokenAddress = "";
   const engine: Base = new TransferERC20(provider, signerWallet.address, recepient, tokenAddress);
   const sponsoredTransactions = await engine.getSponsoredTransactions();
 
